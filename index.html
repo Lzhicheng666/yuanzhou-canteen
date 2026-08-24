@@ -4,10 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#FFF9F5" />
-  <!-- iOS 添加到主屏幕：全屏 standalone 模式，状态栏用页面同色（暖白） -->
+  <!--
+    iOS 主屏幕图标以 Safari 模式打开：iOS 会用 theme-color 将顶部状态栏/地址栏
+    区域染成页面同色（暖白），视觉无缝。
+    不要加 apple-mobile-web-app-capable：standalone 全屏模式下 iOS 只允许
+    纯白/纯黑/白字透明三种状态栏，无法自定义颜色，会出现一条白带。
+    Android 端由 manifest 的 display:standalone + theme_color 正常染色。
+  -->
   <meta name="mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="apple-mobile-web-app-title" content="园洲餐食部" />
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
   <link rel="manifest" href="manifest.webmanifest" />
